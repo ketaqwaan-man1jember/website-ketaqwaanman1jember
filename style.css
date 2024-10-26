@@ -1,0 +1,495 @@
+/* Hero Section */
+.hero-section {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(0,128,128,0.8) 0%, rgba(0,150,136,0.8) 100%);
+    color: white;
+    position: relative;
+}
+.hero-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-text p {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+.hero-image {
+    width: 50%;
+    position: relative;
+}
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 128, 128, 0.7);
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.overlay-content {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    text-align: center;
+}
+.overlay-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.overlay-content p {
+    font-size: 1.5rem;
+}
+/* Styling untuk Slider */
+/* Base slider styles */
+.kegiatan-slider,
+.ekskul-slider {
+    width: 100%;
+    margin: 0 -15px;
+    visibility: hidden; /* Hide slider until initialized */
+}
+
+.kegiatan-slider.tns-slider,
+.ekskul-slider.tns-slider {
+    visibility: visible; /* Show slider after initialization */
+}
+
+/* Card styles */
+.slide-card {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* filter: grayscale(100%); */
+}
+
+.slide-card:hover {
+    transform: translateY(-10px);
+    /* filter: grayscale(0%); */
+}
+
+/* Content styles */
+.content-wrapper {
+    position: relative;
+    overflow: hidden;
+    flex-grow: 1;
+    transition: max-height 0.3s ease;
+}
+
+.content-wrapper.expanded {
+    max-height: none !important;
+}
+
+.fade-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(transparent, white);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.content-wrapper.expanded .fade-overlay {
+    opacity: 0;
+}
+
+.slide-card .w-full.h-64.overflow-hidden { 
+    display: flex;
+    align-items: center; /* Pusatkan image secara vertikal */
+    justify-content: center; /* Pusatkan image secara horizontal */
+    padding: 20px;
+    position: relative;
+}
+
+.slide-card img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 0.75rem;
+}
+
+/* Menambahkan pseudo-element untuk padding tambahan */
+.slide-card .w-full.h-64.overflow-hidden::before,
+.slide-card .w-full.h-64.overflow-hidden::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 20px; /* Sesuaikan dengan nilai padding vertikal */
+}
+
+.slide-card .w-full.h-64.overflow-hidden::before {
+    left: 20;
+}
+
+.slide-card .w-full.h-64.overflow-hidden::after {
+    right: 0;
+}
+
+.slide-card > .p-8 {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Biarkan elemen ini mengambil sisa ruang yang tersedia */
+    justify-content: center; /* Untuk memusatkan konten secara vertikal */
+    gap: 1rem; /* Tambahkan jarak antara elemen dalam card */
+}
+
+/* ekskul slider seting */
+.ekskul-card {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* filter: grayscale(100%); */
+    
+}
+
+.ekskul-card:hover {
+    transform: translateY(-10px);
+    /* filter: grayscale(0%); */
+}
+
+.ekskul-card .w-full.h-64.overflow-hidden { 
+    display: flex;
+    align-items: center; /* Pusatkan image secara vertikal */
+    justify-content: center; /* Pusatkan image secara horizontal */
+    padding: 20px;
+    position: relative;
+}
+/* Menambahkan pseudo-element untuk padding tambahan */
+.ekskul-card .w-full.h-64.overflow-hidden::before,
+.ekskul-card .w-full.h-64.overflow-hidden::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Sesuaikan dengan nilai padding horizontal */
+}
+
+.ekskul-card .w-full.h-64.overflow-hidden::before {
+    left: 20;
+}
+
+.ekskul-card .w-full.h-64.overflow-hidden::after {
+    right: 0;
+}
+
+.ekskul-card > .p-8 { /* Targetkan div dengan class p-8 langsung di bawah .ekskul-card */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Biarkan elemen ini mengambil sisa ruang yang tersedia */
+    justify-content: center; /* Untuk memusatkan konten secara vertikal */
+    gap: 1rem; /* Tambahkan jarak antara elemen dalam card */
+}
+
+.content-wrapper {
+    /* Hapus max-height: 150px; */ 
+    position: relative;
+    overflow: hidden; 
+    transition: max-height 0.3s ease;
+}
+
+.ekskul-card img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 0.75rem;
+}
+
+.ekskul-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.ekskul-tag {
+    background-color: #e6fffa;
+    color: #006d6d;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+/* Navigation styles */
+.tns-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.tns-controls button {
+    background: linear-gradient(135deg, #64ffda 0%, #006d6d 100%);
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.tns-controls button:hover {
+    background: linear-gradient(135deg, #00bfa5 0%, #64ffda 100%);
+    transform: translateY(-5px);
+    color: black;
+}
+
+.tns-nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.tns-nav button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    margin: 0 5px;
+    padding: 0;
+}
+
+.tns-nav button.tns-nav-active {
+    background: #006d6d;
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+    .slide-card {
+        height: auto;
+        min-height: 500px;
+    }
+}
+.hero-content {
+    background: linear-gradient(135deg, rgb(0, 128, 128) 0%, rgb(0, 150, 136) 100%);
+}
+footer {
+    background-color: #006d6d; /* Warna background teal */
+    color: white; /* Warna teks */
+    padding: 25px; /* Memberikan ruang di dalam footer */
+}
+nav {
+    background-color: #006d6d; /* Warna background teal */
+    color: white; /* Warna teks */
+    padding: 10px; /* Memberikan ruang di dalam footer */
+}
+    /* Kotak Saran Section */
+#saran {
+    background-color: #f3f4f6; /* Warna background (bisa diubah sesuai keinginan) */
+    padding: 50px 0; /* Menambahkan jarak di atas dan bawah */
+}
+#saran h2 {
+    color: #006d6d; /* Ubah warna teks judul jika diperlukan */
+}
+#saran p {
+    color: #4b5563; /* Ubah warna teks paragraf jika diperlukan */
+}
+#saran a {
+    background: linear-gradient(135deg, #64ffda 0%, #00bfa5 100%); /* Warna background tombol */
+    color: #006d6d; /* Warna teks pada tombol */
+    padding: 12px 24px; /* Padding tombol */
+    border-radius: 8px; /* Sudut melengkung tombol */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3 ease;
+}
+#saran a:hover {
+    background: linear-gradient(135deg, #00bfa5 0%, #64ffda 100%); /* Warna background tombol saat hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+/* Animasi fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+nav {
+    position: fixed; /* Navbar akan tetap berada di posisi tetap */
+    top: 0; /* Di bagian atas halaman */
+    left: 0;
+    width: 100%; /* Lebar penuh sesuai layar */
+    background-color: #006d6d; /* Warna background teal */
+    color: white; /* Warna teks */
+    padding: 10px;
+    z-index: 1000; /* Pastikan navbar berada di depan elemen lainnya */
+    opacity: 1; /* Menyembunyikan animasi muncul */
+    transform: translateY(0); /* Menyembunyikan animasi muncul */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+nav {
+    background-color: #006d6d; /* Warna background teal */
+    color: white; /* Warna teks */
+    padding: 10px;
+    opacity: 0; /* Awalnya disembunyikan */
+    transform: translateY(-20px); /* Animasi muncul dari atas */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi animasi */
+}
+/* Animasi saat halaman dimuat */
+nav.show {
+    opacity: 1; /* Tampilkan */
+    transform: translateY(0); /* Kembali ke posisi semula */
+}
+/* Hover efek pada link navbar */
+nav a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    font-size: 1.0rem;
+    font-weight: 500;
+    color: white;
+    transition: color 0.3s ease;
+}
+nav a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+nav a:hover {
+    color: #b2f5ea; /* Warna teks saat di-hover */
+}
+nav a:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* Animasi untuk Struktur Organisasi */
+.section-structure {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 50px;
+}
+
+.text-left-content {
+    width: 40%;
+    padding-right: 50px;
+}
+
+.structure-content {
+    width: 50%;
+    background-color: #e0f7fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.structure-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #006d6d;
+}
+
+.structure-list {
+    list-style: none;
+    padding: 0;
+}
+
+.structure-list li {
+    background: linear-gradient(135deg, #64ffda 0%, #00bfa5 100%);
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: #006d6d;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 15px rgba(0, 150, 136, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.structure-list li:hover {
+    background: linear-gradient(135deg, #00bfa5 0%, #64ffda 100%);
+    transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#kegiatan {
+    background: linear-gradient(to top, #006d6d, #10f0ca);
+}
+#kegiatan h2 {
+    color: #37595a;
+}
+#ekskul {
+    background: linear-gradient(to bottom, #006d6d, #06d8b5);
+}
+#ekskul h2 {
+    color: #10f0ca;
+}
+
+#informasi {
+    background: linear-gradient(to bottom, #06d8b5, #006d6d); /* Warna background (bisa diubah sesuai keinginan) */
+    padding: 50px 0; /* Menambahkan jarak di atas dan bawah */
+}
+#informasi h2 {
+    color: #ffffff; /* Ubah warna teks judul jika diperlukan */
+}
+#informasi p {
+    color: #ffffff; /* Ubah warna teks paragraf jika diperlukan */
+}
+#informasi a {
+    background: linear-gradient(135deg, #64ffda 0%, #00bfa5 100%); /* Warna background tombol */
+    color: #ffffff; /* Warna teks pada tombol */
+    padding: 12px 24px; /* Padding tombol */
+    border-radius: 8px; /* Sudut melengkung tombol */
+    transition: transform 0.3s ease;
+}
+#informasi a:hover {
+    background: linear-gradient(135deg, #00bfa5 0%, #64ffda 100%); /* Warna background tombol saat hover */
+    transform: translateY(-10px);
+}

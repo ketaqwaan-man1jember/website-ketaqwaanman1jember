@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketaqwaan Message</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            font-family: 'Courier New', Courier, monospace;
+            
+        }
+
+        .message-box {
+            background: linear-gradient(to top, #006d6d, #10f0ca);
+            color: white;
+            border-radius: 30px;
+            padding: 40px 60px;
+            text-align: center;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out; /* Animasi masuk */
+            transition: transform 0.3s ease;            
+        }
+        
+        .message-box:hover {
+            background: linear-gradient(to Right, #006d6d, #10f0ca);
+            transform: translateY(-5px);
+        }
+        .title-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .sub-text {
+            font-size: 14px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        .feedback-button {
+            background: linear-gradient(135deg, #64ffda 0%, #00bfa5 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 30px;
+            color: #004d40;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .feedback-button:hover {
+            background: linear-gradient(135deg, #00bfa5 0%, #64ffda 100%);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        /* Animasi fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <p class="title-text">WADUHH ADA YANG TIDAK SABAR NI MAU MASUK KETAQWAAN NI😁</p>
+        <p class="sub-text" id="subText">sabar yaaa, tunggu informasi selanjutnyaa😉.</p>
+    </div>
+
+    <a href="/index.html" class="feedback-button">Kembali</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const subText = document.getElementById("subText");
+
+            setTimeout(() => {
+                subText.style.color = "#ffffff";  // Change text color after 2 seconds
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
