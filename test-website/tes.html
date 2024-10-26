@@ -1,0 +1,62 @@
+.kegiatan-card {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
+}
+
+.kegiatan-card:hover {
+    transform: translateY(-10px);
+}
+
+.kegiatan-card .w-full.h-64.overflow-hidden { 
+    display: flex;
+    align-items: center; /* Pusatkan image secara vertikal */
+    justify-content: center; /* Pusatkan image secara horizontal */
+    padding: 20px;
+    position: relative;
+}
+/* Menambahkan pseudo-element untuk padding tambahan */
+.kegiatan-card .w-full.h-64.overflow-hidden::before,
+.kegiatan-card .w-full.h-64.overflow-hidden::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Sesuaikan dengan nilai padding horizontal */
+}
+
+.kegiatan-card .w-full.h-64.overflow-hidden::before {
+    left: 20;
+}
+
+.kegiatan-card .w-full.h-64.overflow-hidden::after {
+    right: 0;
+}
+
+.kegiatan-card > .p-8 { /* Targetkan div dengan class p-8 langsung di bawah .ekskul-card */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Biarkan elemen ini mengambil sisa ruang yang tersedia */
+    justify-content: center; /* Untuk memusatkan konten secara vertikal */
+    gap: 1rem; /* Tambahkan jarak antara elemen dalam card */
+}
+
+.kegiatan-wrapper {
+    /* Hapus max-height: 150px; */ 
+    position: relative;
+    overflow: hidden; 
+    transition: max-height 0.3s ease;
+}
+
+.kegiatan-card img {
+    width: 100%; /* Pastikan image memenuhi lebar container */
+    height: 100%;
+    object-fit: cover; /* Pertahankan aspect ratio image */
+}
