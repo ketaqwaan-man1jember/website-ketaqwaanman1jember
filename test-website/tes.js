@@ -12,18 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
         nav: true,
         loop: true,
         speed: 400,
-        gutter: 0,
+        gutter: 10,
         touch: true,
         mouseDrag: true,
         preventScrollOnTouch: 'auto',
         responsive: {
             640: {
                 items: 2,
-                gutter: 0
+                gutter: 20
             },
             1024: {
                 items: 3,
-                gutter: 0
+                gutter: 30
             }
         },
         controlsText: ['❮', '❯']
