@@ -668,4 +668,8 @@ html{
     .slide-card {
         height: 700px;
     }
+    body {
+        height: auto;
+        width: auto;
+    }
 }
