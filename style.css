@@ -611,6 +611,10 @@ html{
     .tns-controls button {
         display: none;
     }
+    body {
+        height: auto;
+        width: auto;
+    }
 }
 
 /* Mobile-Optimized Sections */
