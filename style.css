@@ -619,61 +619,92 @@ html{
 
 /* Mobile-Optimized Sections */
 @media (max-width: 767px) {
+    body {
+        min-width: 320px;
+        overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .hero-text h2 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .hero-text p {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .overlay-content h2 {
+        font-size: 2rem;
+    }
+
+    .overlay-content p {
+        font-size: 1.25rem;
+    }
+
+    /* Kegiatan & Ekskul Sections */
     #kegiatan,
     #ekskul,
     #informasi {
         padding: 3rem 1rem;
     }
 
-    .hero-section {
-        flex-direction: column;
-    }
-    
-    .hero-text,
-    .hero-image {
-        width: 100%;
-    }
-    
     .slide-card,
     .ekskul-card {
         height: auto;
         min-height: 600px !important;
     }
-        .tns-controls button {
-        display: none;
-    }
-}
 
-@media (max-width: 767px) {
-    .hero-section {
-        flex-direction: column;
-    }
-    
-    .hero-text,
-    .hero-image {
-        width: 100%;
-    }
-    
-    .slide-card,
-    .ekskul-card {
-        height: auto;
-        min-height: 600px !important;
-    }
     .tns-controls button {
         display: none;
     }
+
     .ekskul-card .ekskul-tags {
         margin-top: 30px;
-        
     }
+
     .ekskul-card {
         height: 700px;
     }
+
     .slide-card {
         height: 700px;
     }
-    body {
-        height: auto;
-        width: auto;
+
+    /* Struktur Organisasi Section */
+    .section-structure {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .text-left-content {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .structure-content {
+        width: 100%;
+    }
+
+    .structure-list li {
+        font-size: 1rem;
     }
 }
