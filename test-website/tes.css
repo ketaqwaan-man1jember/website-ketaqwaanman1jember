@@ -1,5 +1,105 @@
-/* Common Card Base Styles */
-.card-base {
+body {
+    min-width: 320px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(0,128,128,0.8) 0%, rgba(0,150,136,0.8) 100%);
+    color: white;
+    position: relative;
+    flex-direction: column;
+    height: auto;
+}
+.hero-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+.hero-text h1 {
+    /* font-size: 4rem */
+    font-weight: bold;
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+.hero-text h2 {
+    /* font-size: 2.5rem; */
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+.hero-text p {
+    /* font-size: 1.5rem; */
+    margin-top: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+.hero-image {
+    width: 50%;
+    position: relative;
+}
+
+.hero-text, .hero-image {
+    width: 100%;
+    padding: 1rem;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 128, 128, 0.7);
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.overlay-content {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    text-align: center;
+}
+.overlay-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.overlay-content p {
+    font-size: 1.5rem;
+}
+/* Styling untuk Slider */
+/* Base slider styles */
+.kegiatan-slider,
+.ekskul-slider {
+    width: 100%;
+    margin: 0 -15px;
+    visibility: hidden; /* Hide slider until initialized */
+    touch-action: pan-y pinch-zoom;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: grab;
+}
+
+
+.kegiatan-slider:active,
+.ekskul-slider:active {
+    cursor: grabbing;
+}
+
+.kegiatan-slider.tns-slider,
+.ekskul-slider.tns-slider {
+    visibility: visible; /* Show slider after initialization */
+}
+
+/* Card styles */
+.slide-card {
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -8,84 +108,56 @@
     border-radius: 0.75rem;
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    isolation: isolate;
-}
-
-.card-base:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
-                0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-/* Slider Base */
-.slider-base {
-    width: 100%;
-    margin: 0 -15px;
-    visibility: hidden;
-    touch-action: pan-y pinch-zoom;
-    user-select: none;
-    -webkit-user-select: none;
-    cursor: grab;
-}
-
-.slider-base:active {
-    cursor: grabbing;
-}
-
-.slider-base.tns-slider {
-    visibility: visible;
-}
-
-/* Image Container Styles */
-.card-image-container {
-    width: 100%;
-    height: 256px; /* h-64 equivalent */
-    overflow: hidden;
-    position: relative;
-    padding: 20px;
-}
-
-.card-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.75rem;
     transition: transform 0.3s ease;
+    /* filter: grayscale(100%); */
 }
 
-.card-base:hover .card-image-container img {
-    transform: scale(1.05);
+.slide-card:hover {
+    transform: translateY(-10px);
+    /* filter: grayscale(0%); */
 }
 
-/* Content Wrapper Styles */
+/* Content styles */
 .content-wrapper {
     position: relative;
     overflow: hidden;
     flex-grow: 1;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    transition: max-height 0.3s ease;
+    max-height: 700px;
 }
 
 .content-wrapper.expanded {
     max-height: none !important;
 }
+.show-more-btn {
+    display: block;
+    margin-top: 1rem;
+    background-color: #00bfa5;
+    color: white;
+    padding: 0.75rem 1.5rem; /* Tambahkan padding yang lebih besar */
+    border: none;
+    border-radius: 0.375rem; /* Radius sudut yang lebih besar */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem; /* Sesuaikan ukuran font */
+    font-weight: 600; /* Tambahkan font tebal */
+    width: fit-content; /* Atur lebar tombol sesuai konten */
+    margin-left: auto; /* Posisikan tombol di kanan */
+    margin-right: auto; /* Pusatkan tombol secara horizontal */
+}
 
-/* Fade Overlay */
+
+.show-more-btn:hover {
+    background-color: #00897b;
+}
+
 .fade-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
-    background: linear-gradient(
-        transparent,
-        rgba(255, 255, 255, 0.9) 50%,
-        white
-    );
+    height: 50px;
+    background: linear-gradient(transparent, white);
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
@@ -94,35 +166,160 @@
     opacity: 0;
 }
 
-/* Specific Slide Card Styles */
-.slide-card {
-    composes: card-base;
-}
-
 .slide-card .content-wrapper {
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.95),
-        white
-    );
+    max-height: none;
+    overflow: visible;
 }
 
-/* Specific Ekskul Card Styles */
+.slide-card .fade-overlay {
+    display: none;
+}
+
+.slide-card .show-more-btn {
+    display: none;
+}
+
+.slide-card .w-full.h-64.overflow-hidden { 
+    display: flex;
+    align-items: center; /* Pusatkan image secara vertikal */
+    justify-content: center; /* Pusatkan image secara horizontal */
+    padding: 20px;
+    position: relative;
+}
+
+.slide-card img,.ekskul-card img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 0.75rem;
+}
+
+/* Menambahkan pseudo-element untuk padding tambahan */
+.slide-card .w-full.h-64.overflow-hidden::before,
+.slide-card .w-full.h-64.overflow-hidden::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 20px; /* Sesuaikan dengan nilai padding vertikal */
+}
+
+.slide-card .w-full.h-64.overflow-hidden::before {
+    left: 20;
+}
+
+.slide-card .w-full.h-64.overflow-hidden::after {
+    right: 0;
+}
+
+.slide-card > .p-8 {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Biarkan elemen ini mengambil sisa ruang yang tersedia */
+    justify-content: center; /* Untuk memusatkan konten secara vertikal */
+    gap: 1rem; /* Tambahkan jarak antara elemen dalam card */
+}
+
+.slide-card,
 .ekskul-card {
-    composes: card-base;
+    height: 600px;
+    /* min-height: 400px; */
+    margin: 0.5rem;
+    transform: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ekskul slider seting */
+.ekskul-card {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* filter: grayscale(100%); */
+    
+}
+
+.ekskul-card:hover {
+    transform: translateY(-10px);
+    /* filter: grayscale(0%); */
+}
+
+.ekskul-card .w-full.h-64.overflow-hidden { 
+    display: flex;
+    align-items: center; /* Pusatkan image secara vertikal */
+    justify-content: center; /* Pusatkan image secara horizontal */
+    padding: 20px;
+    position: relative;
+}
+/* Menambahkan pseudo-element untuk padding tambahan */
+.ekskul-card .w-full.h-64.overflow-hidden::before,
+.ekskul-card .w-full.h-64.overflow-hidden::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Sesuaikan dengan nilai padding horizontal */
+}
+
+.ekskul-card .w-full.h-64.overflow-hidden::before {
+    left: 20;
+}
+
+.ekskul-card .w-full.h-64.overflow-hidden::after {
+    right: 0;
+}
+
+.ekskul-card > .p-8 { /* Targetkan div dengan class p-8 langsung di bawah .ekskul-card */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Biarkan elemen ini mengambil sisa ruang yang tersedia */
+    justify-content: center; /* Untuk memusatkan konten secara vertikal */
+    gap: 1rem; /* Tambahkan jarak antara elemen dalam card */
+}
+
+/* Mengatur posisi tag ekskul agar rata di bawah */
+.ekskul-card .ekskul-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: auto; /* Tempatkan tag di bagian bawah card */
+    gap: 0.5rem;
+}
+
+/* Pembaruan Ekskul Slider CSS i*/
+
+/* Menghapus tombol "Tampilkan Selengkapnya" pada ekskul slider */
 .ekskul-card .content-wrapper {
-    justify-content: space-between;
+    max-height: none;
+    overflow: visible;
 }
 
-/* Ekskul Tags */
+.ekskul-card .fade-overlay {
+    display: none;
+}
+
+.ekskul-card .show-more-btn {
+    display: none;
+}
+
+.ekskul-card img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 0.75rem;
+}
+
 .ekskul-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: auto;
-    padding-top: 1rem;
+    margin-top: 1rem;
+    
 }
 
 .ekskul-tag {
@@ -133,91 +330,397 @@
     font-size: 0.875rem;
     font-weight: 600;
     white-space: nowrap;
-    transition: all 0.2s ease;
+}
+/* Navigation styles */
+.tns-controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
 }
 
-.ekskul-tag:hover {
-    background-color: #006d6d;
-    color: #e6fffa;
-    transform: translateY(-2px);
+.tns-controls button {
+    pointer-events: auto;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    color: transparent;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: transparent;
+    backdrop-filter: blur(4px);
 }
 
-/* Card Typography */
-.card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1a202c;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
+/* .tns-controls button:first-child {
+    left: 10px;
 }
 
-.card-description {
-    font-size: 1rem;
-    color: #4a5568;
-    line-height: 1.5;
+.tns-controls button:last-child {
+    right: 10px;
 }
 
-/* Loading State */
-.card-base.loading {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
+.tns-controls button:hover {
+    background: rgba(0, ;
+    transform: scale(1.1);
+} */
 
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .card-base {
+
+/* Responsive styles */
+@media (max-width: 640px) {
+    .slide-card {
         height: auto;
         min-height: 500px;
-        margin: 0 10px;
-    }
-
-    .card-image-container {
-        height: 200px;
-        padding: 15px;
-    }
-
-    .content-wrapper {
-        padding: 1.5rem;
-    }
-
-    .card-title {
-        font-size: 1.25rem;
-    }
-
-    .ekskul-tags {
-        padding-top: 0.5rem;
-    }
-
-    .ekskul-tag {
-        padding: 0.375rem 0.75rem;
-        font-size: 0.75rem;
     }
 }
-
-/* High-contrast and Reduced Motion Preferences */
-@media (prefers-reduced-motion: reduce) {
-    .card-base,
-    .card-image-container img,
-    .ekskul-tag {
-        transition: none;
+.hero-content {
+    background: linear-gradient(135deg, rgb(0, 128, 128) 0%, rgb(0, 150, 136) 100%);
+}
+footer {
+    background-color: #006d6d; /* Warna background teal */
+    color: white; /* Warna teks */
+    padding: 25px; /* Memberikan ruang di dalam footer */
+}
+nav {
+    background-color: #006d6d; /* Warna background teal */
+    color: white; /* Warna teks */
+    padding: 10px; /* Memberikan ruang di dalam footer */
+}
+    /* Kotak Saran Section */
+#saran {
+    background-color: #f3f4f6; /* Warna background (bisa diubah sesuai keinginan) */
+    padding: 50px 0; /* Menambahkan jarak di atas dan bawah */
+}
+#saran h2 {
+    color: #006d6d; /* Ubah warna teks judul jika diperlukan */
+}
+#saran p {
+    color: #4b5563; /* Ubah warna teks paragraf jika diperlukan */
+}
+#saran a {
+    background: linear-gradient(135deg, #64ffda 0%, #00bfa5 100%); /* Warna background tombol */
+    color: #006d6d; /* Warna teks pada tombol */
+    padding: 12px 24px; /* Padding tombol */
+    border-radius: 8px; /* Sudut melengkung tombol */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3 ease;
+}
+#saran a:hover {
+    background: linear-gradient(135deg, #00bfa5 0%, #64ffda 100%); /* Warna background tombol saat hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+/* Animasi fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
+nav {
+    position: fixed; /* Navbar akan tetap berada di posisi tetap */
+    top: 0; /* Di bagian atas halaman */
+    left: 0;
+    width: 100%; /* Lebar penuh sesuai layar */
+    background-color: #006d6d; /* Warna background teal */
+    color: white; /* Warna teks */
+    padding: 10px;
+    z-index: 1000; /* Pastikan navbar berada di depan elemen lainnya */
+    opacity: 1; /* Menyembunyikan animasi muncul */
+    transform: translateY(0); /* Menyembunyikan animasi muncul */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+nav {
+    background-color: #006d6d; /* Warna background teal */
+    color: white; /* Warna teks */
+    padding: 10px;
+    opacity: 0; /* Awalnya disembunyikan */
+    transform: translateY(-20px); /* Animasi muncul dari atas */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi animasi */
+}
+/* Animasi saat halaman dimuat */
+nav.show {
+    opacity: 1; /* Tampilkan */
+    transform: translateY(0); /* Kembali ke posisi semula */
+}
+/* Hover efek pada link navbar */
+nav a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    /* font-size: 1.0rem; */
+    font-weight: 500;
+    color: white;
+    transition: color 0.3s ease;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    padding: 0.5rem;
+    margin: 0 0.3rem;
+}
+nav a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+nav a:hover {
+    color: #b2f5ea; /* Warna teks saat di-hover */
+}
+nav a:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+html{
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+/* Animasi untuk Struktur Organisasi */
+.section-structure {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 50px;
+}
 
-@media (prefers-contrast: high) {
-    .card-base {
-        box-shadow: 0 0 0 2px #006d6d;
+.text-left-content {
+    width: 40%;
+    padding-right: 50px;
+}
+
+.structure-content {
+    width: 50%;
+    background-color: #e0f7fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.structure-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #006d6d;
+}
+
+.structure-list {
+    list-style: none;
+    padding: 0;
+}
+
+.structure-list li {
+    background: linear-gradient(135deg, #64ffda 0%, #00bfa5 100%);
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: #006d6d;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 15px rgba(0, 150, 136, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.structure-list li:hover {
+    background: linear-gradient(135deg, #00bfa5 0%, #64ffda 100%);
+    transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#kegiatan {
+    background: linear-gradient(to top, #006d6d, #10f0ca);
+}
+#kegiatan h2 {
+    color: #37595a;
+}
+#ekskul {
+    background: linear-gradient(to bottom, #006d6d, #06d8b5);
+}
+#ekskul h2 {
+    color: #10f0ca;
+}
+
+#informasi {
+    background: linear-gradient(to bottom, #06d8b5, #006d6d); /* Warna background (bisa diubah sesuai keinginan) */
+    padding: 50px 0; /* Menambahkan jarak di atas dan bawah */
+}
+#informasi h2 {
+    color: #ffffff; /* Ubah warna teks judul jika diperlukan */
+}
+#informasi p {
+    color: #ffffff; /* Ubah warna teks paragraf jika diperlukan */
+}
+#informasi a {
+    background: linear-gradient(135deg, #64ffda 0%, #00bfa5 100%); /* Warna background tombol */
+    color: #ffffff; /* Warna teks pada tombol */
+    padding: 12px 24px; /* Padding tombol */
+    border-radius: 8px; /* Sudut melengkung tombol */
+    transition: transform 0.3s ease;
+}
+#informasi a:hover {
+    background: linear-gradient(135deg, #00bfa5 0%, #64ffda 100%); /* Warna background tombol saat hover */
+    transform: translateY(-10px);
+}
+/* Touch-friendly buttons */
+#saran a,
+#informasi a {
+    padding: 1rem 2rem;
+    display: inline-block;
+    touch-action: manipulation;
+}
+
+/* Media Queries for Desktop */
+/* @media (min-width: 768px) {
+    .hero-section {
+        flex-direction: row;
+    }
+    
+    .hero-text,
+    .hero-image {
+        width: 50%;
+    }
+    
+    .slide-card,
+    .ekskul-card {
+        min-height: 600px;
+    }
+    
+    .tns-controls button {
+        display: none;
+    }
+    body {
+        height: auto;
+        width: auto;
+    }
+} */
+
+/* Mobile-Optimized Sections */
+/* Penyesuaian untuk tampilan mobile */
+@media (max-width: 767px) {
+    body {
+      min-width: 320px;
+      overflow-x: hidden;
+    }
+  
+    /* Hero Section */
+    .hero-section {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .hero-text {
+      width: 100%;
+      padding: 1.5rem;
+    }
+  
+    .hero-text h1 {
+      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    }
+  
+    .hero-text h2 {
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    }
+  
+    .hero-text p {
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    }
+  
+    .hero-image {
+      width: 100%;
+    }
+  
+    .overlay-content h2 {
+      font-size: 1.8rem;
+    }
+  
+    .overlay-content p {
+      font-size: 1.1rem;
+    }
+  
+    /* Kegiatan & Ekskul Sections */
+    #kegiatan,
+    #ekskul,
+    #informasi {
+      padding: 2.5rem 0.75rem;
+    }
+  
+    .slide-card,
+    .ekskul-card {
+      height: auto;
+      min-height: 600px !important;
+    }
+  
+    .tns-controls button {
+      display: none;
+    }
+  
+    .ekskul-card .ekskul-tags {
+      margin-top: 25px;
+    }
+  
+    .ekskul-card {
+      height: 650px;
+    }
+  
+    .slide-card {
+      height: 650px;
+    }
+  
+    /* Struktur Organisasi Section */
+    .section-structure {
+      flex-direction: column;
+      padding: 25px;
+    }
+  
+    .text-left-content {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 25px;
+    }
+  
+    .structure-content {
+      width: 100%;
+    }
+  
+    .structure-list li {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .slide-card, .ekskul-card {
+        height: auto;
+        min-height: 500px;
+        padding: 1rem;
     }
 
-    .ekskul-tag {
-        background-color: #006d6d;
-        color: white;
+    .slide-card img, .ekskul-card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 }

@@ -1,6 +1,11 @@
 body {
     min-width: 320px;
     overflow-x: hidden;
+    font-size: 16px;
+}
+
+.root {
+    --scale-factor: clamp(0.7, 0.8, 0.9)
 }
 
 /* Hero Section */
@@ -593,7 +598,7 @@ html{
 }
 
 /* Media Queries for Desktop */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .hero-section {
         flex-direction: row;
     }
@@ -615,96 +620,116 @@ html{
         height: auto;
         width: auto;
     }
-}
+} */
 
 /* Mobile-Optimized Sections */
+/* Penyesuaian untuk tampilan mobile */
 @media (max-width: 767px) {
     body {
-        min-width: 320px;
-        overflow-x: hidden;
+      min-width: 200px;
+      overflow-x: hidden;
+      font-size: 8px;
+      max-height: 200px;
     }
-
+ 
     /* Hero Section */
     .hero-section {
-        flex-direction: column;
-        height: auto;
+      flex-direction: column;
+      height: auto;
+      min-height: 80vh;
+      max-height: 200px;
+      padding: 1rem;
     }
 
+  
     .hero-text {
-        width: 100%;
-        padding: 2rem;
+      width: 100%;
+      padding: 1.5rem;
     }
-
+  
     .hero-text h1 {
-        font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+      line-height: 1.2;
     }
-
+  
     .hero-text h2 {
-        font-size: clamp(1.5rem, 4vw, 2rem);
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+      margin-bottom: calc(0.8 * var(--scale-factor));
     }
-
+  
     .hero-text p {
-        font-size: clamp(1rem, 3vw, 1.25rem);
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      margin-bottom: calc(1rem * var(--scale-factor));
     }
-
+  
     .hero-image {
+      width: 100%;
+    }
+    .hero-text, .hero-image {
         width: 100%;
+        padding: calc(1rem * var(--scale-factor));
     }
-
+    .overlay-content {
+        bottom: 15%;
+        left: 5%;
+    }
     .overlay-content h2 {
-        font-size: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
     }
-
+  
     .overlay-content p {
-        font-size: 1.25rem;
+      font-size: clamp(0.8rem, 3vw, 1.2rem);
     }
-
+  
     /* Kegiatan & Ekskul Sections */
     #kegiatan,
     #ekskul,
     #informasi {
-        padding: 3rem 1rem;
+      padding: 2.5rem 0.75rem;
     }
-
+  
     .slide-card,
     .ekskul-card {
-        height: auto;
-        min-height: 600px !important;
+      height: auto;
+      min-height: 700px !important;
     }
-
+  
     .tns-controls button {
-        display: none;
+      display: none;
     }
-
+  
     .ekskul-card .ekskul-tags {
-        margin-top: 30px;
+      margin-top: 25px;
     }
-
+  
     .ekskul-card {
-        height: 700px;
+      height: 700px;
     }
-
+  
     .slide-card {
-        height: 700px;
+      height: 700px;
     }
-
+  
     /* Struktur Organisasi Section */
     .section-structure {
-        flex-direction: column;
-        padding: 30px;
+      flex-direction: column;
+      padding: 25px;
     }
-
+  
     .text-left-content {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 30px;
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 25px;
     }
-
+  
     .structure-content {
-        width: 100%;
+      width: 100%;
     }
-
+  
     .structure-list li {
-        font-size: 1rem;
+      font-size: 0.9rem;
     }
-}
+  }
+  
+
+  
