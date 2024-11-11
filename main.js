@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.getElementById('navbar');
     if (navbar) navbar.classList.add('show');
     
-    // Improved slider configuration
+    // Optimized slider configuration for mobile and no gutter
     const sliderConfig = {
         items: 1,
         slideBy: 1,
