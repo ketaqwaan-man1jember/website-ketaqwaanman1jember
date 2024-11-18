@@ -1,425 +1,660 @@
-    <!DOCTYPE html>
-    <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
-        <title>Ketaqwaan MAN 1 Jember</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
-        <link rel="stylesheet" href="style.css">
-        <script src="main.js"></script>
-    </head>
-    <body class="bg-gray-50">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
+    <title>Ketaqwaan MAN 1 Jember</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body class="bg-gray-50">
 
-
-        <!-- Navbar -->
-        <nav id="navbar">
-            <div class="container mx-auto px-6 py-3">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <span class="text-xl font-bold">SIE 1 KETAQWAAN MAN 1 JEMBER</span>
-                    </div>
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a href="#beranda" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Beranda</a>
-                        <a href="#struktur" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Struktur Organisasi</a>
-                        <a href="#kegiatan" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Kegiatan</a>
-                        <a href="#ekskul" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Ekstrakurikuler</a>
-                        <a href="#informasi" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Informasi</a>
-                        <a href="#saran" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Kotak Saran</a>
-                    </div>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold">SIE 1 KETAQWAAN MAN 1 JEMBER</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Beranda</a>
+                    <a href="#struktur" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Struktur Organisasi</a>
+                    <a href="#proker" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Program Kerja</a>
+                    <a href="#kegiatan" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">PHBI</a>
+                    <a href="#ekskul" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Ekstrakurikuler</a>
+                    <a href="#informasi" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Informasi</a>
+                    <a href="#saran" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Kotak Saran</a>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
-        <!-- Hero Section -->
-        <section class="hero-slider" id="beranda">
-            <div class="flex flex-col md:flex-row min-h-auto">
-                <!-- Left side - Text content -->
-                <div class="hero-content w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 text-white order-1 md:order-none min-h-auto">
-                    <div class="max-w-xl">
-                        <img src="/image-index/ketaqwaan-logo.png" alt="Logo" class="w-32 h-32 md:w-48 md:h-48 mb-6 md:mb-8 mx-auto md:mx-0">
-                        <h1 class="text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center md:text-left">Selamat Datang</h1>
-                        <h2 class="text-2xl md:text-3xl mb-3 md:mb-4 text-center md:text-left">di Website Kami</h2>
-                        <h3 class="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-center md:text-left">SIE 1 KETAQWAAN</h3>
-                        <h4 class="text-xl md:text-2xl mb-6 md:mb-8 text-center md:text-left">MAN 1 JEMBER</h4>
-                        <p class="text-lg md:text-xl text-center md:text-left">Membentuk Generasi Berakhlak dan Bertaqwa</p>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero-slider" id="beranda">
+        <div class="flex flex-col md:flex-row min-h-auto">
+            <!-- Left side - Text content -->
+            <div class="hero-content w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 text-white order-1 md:order-none min-h-auto">
+                <div class="max-w-xl">
+                    <img src="/image-index/ketaqwaan-logo.png" alt="Logo" class="w-32 h-32 md:w-48 md:h-48 mb-6 md:mb-8 mx-auto md:mx-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center md:text-left">Selamat Datang</h1>
+                    <h2 class="text-2xl md:text-3xl mb-3 md:mb-4 text-center md:text-left">di Website Kami</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-center md:text-left">SIE 1 KETAQWAAN</h3>
+                    <h4 class="text-xl md:text-2xl mb-6 md:mb-8 text-center md:text-left">MAN 1 JEMBER</h4>
+                    <p class="text-lg md:text-xl text-center md:text-left">Membentuk Generasi Berakhlak dan Bertaqwa</p>
                 </div>
-            
-                <!-- Right side - Image -->
-                <div class="hero-image w-full md:w-1/2 relative order-2 md:order-none min-h-[50vh] md:min-h-screen">
-                    <img src="/image-index/member-ketaqwaan.jpg" alt="member-ketaqwaan" class="w-full h-full object-cover absolute inset-0">
-                    <div class="absolute inset-0 flex items-center justify-center text-white text-center bg-black bg-opacity-30">
-                        <div class="p-4">
-                            <h2 class="text-3xl md:text-4xl font-bold mb-4">KETAQWAAN</h2>
-                            <p class="text-lg md:text-xl px-4">"Mewujudkan generasi muda yang beriman, berakhlak, berilmu, dan memiliki jiwa khidmah"</p>
+            </div>
+        
+            <!-- Right side - Image -->
+            <div class="hero-image w-full md:w-1/2 relative order-2 md:order-none min-h-[50vh] md:min-h-screen">
+                <img src="/image-index/member-ketaqwaan.jpg" alt="member-ketaqwaan" class="w-full h-full object-cover absolute inset-0">
+                <div class="absolute inset-0 flex items-center justify-center text-white text-center bg-black bg-opacity-30">
+                    <div class="p-4">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">KETAQWAAN</h2>
+                        <p class="text-lg md:text-xl px-4">"Mewujudkan generasi muda yang beriman, berakhlak, berilmu, dan memiliki jiwa khidmah"</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Struktur Organisasi Section -->
+    <section id="struktur" class="section-structure">
+        <!-- Teks di sebelah kiri -->
+        <div class="text-left-content">
+            <h2 class="text-3xl font-bold text-left mb-4">Struktur Organisasi</h2>
+            <p class="text-gray-700 text-left mb-6">
+                Berikut adalah struktur organisasi SIE 1 KETAQWAAN MAN 1 Jember periode 2023/2024.
+            </p>
+        </div>
+    
+        <!-- Struktur organisasi di sebelah kanan -->
+        <div class="structure-content">
+            <h3 class="text-center font-bold mb-4">Susunan Pengurus</h3>
+            <h3 class="text-center font-bold mb-4">2023 / 2024</h3>
+            <ul class="structure-list">
+                <li>Koordinator Bidang: Bima Sakti Dimasta</li>
+                <li>Ketua: Muhammad Farhan Maulana</li>
+                <li>Wakil Ketua: Muhammad Ilfan Enggal</li>
+                <li>Sekretaris 1: Meyla Fahza</li>
+                <li>Sekretaris 2: Queen Fahriza Putri</li>
+                <li>Bendahara 1: Shuhufa Nur Indah</li>
+                <li>Bendahara 2: Nadia Regita</li>
+                <li>Koordinator sie Humas: Esti Mustika</li>
+                <li>Koordinator sie Ubudiyah: Abdullah Habibi</li>
+                <li>Koordinator sie Sarpas: Junda Balqies</li>
+                <li>Koordinator sie Media: Muhammad Ali Shidqi</li>
+                <li>Koordinator ekskul Hadrah: Ria Aulia Ramadhan</li>
+                <li>Koordinator ekskul Kaligrafi: Nadia Mumtazah Alfitroh</li>
+                <li>Koordinator ekskul Tilawah: Muhammad Irfan Afif Baidur</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="proker" class="program-kerja">
+        <div class="container-proker">
+            <div class="section-header-proker">
+                <h2 class="section-title-proker">Program Kerja</h2>
+                <p class="section-subtitle-proker">Berbagai inisiatif dan program yang kami laksanakan untuk mencapai visi dan misi organisasi</p>
+            </div>
+    
+            <div class="program-kerja">
+                <div class="container-proker">
+                    <div class="program-content">
+                        <div class="swiper-proker">
+                            <div class="swiper-wrapper">
+                                <!-- Slide items -->
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-mosque"></i>
+                                        </div>
+                                        <h3 class="program-title">Maulid Nabi dan Hari Santri Nasional 2023 </h3>
+                                        <p class="program-description">Perayaan untuk memperingati kelahiran Nabi Muhammad dan Hari Santri Nasional dengan berbagai kegiatan keagamaan.<br>Sabtu, 21 Oktober 2023</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>                             
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-star-and-crescent"></i>
+                                        </div>
+                                        <h3 class="program-title">Isra Mi’raj</h3>
+                                        <p class="program-description">Program peringatan perjalanan spiritual Nabi Muhammad SAW yang melibatkan perjalanan malam dari Makkah ke Yerusalem dan naik ke langit.<br>Kamis, 22 Februari 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <h3 class="program-title">Muharram</h3>
+                                        <p class="program-description">Program acara untuk memperingati Tahun Baru Hijriyah dengan kegiatan yang menggugah semangat persatuan dan refleksi spiritual.<br>Jumat, 26 Juli 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-mosque"></i>
+                                        </div>
+                                        <h3 class="program-title">Maulid Nabi</h3>
+                                        <p class="program-description">Program peringatan kelahiran Nabi Muhammad SAW untuk memperdalam kecintaan terhadap Rasul.<br>Rabu, 25 September 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-music"></i>
+                                        </div>
+                                        <h3 class="program-title">Ekstrakurikuler Hadrah </h3>
+                                        <p class="program-description">Program latihan dan pertunjukan seni hadrah yang menumbuhkan semangat keislaman di kalangan siswa.</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <h3 class="program-title">Ekstrakurikuler Tilawah </h3>
+                                        <p class="program-description">Program latihan membaca Al-Qur'an dengan tajwid yang baik dan benar.</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div>      
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </div>
+                                        <h3 class="program-title">Ekstrakurikuler Kaligrafi </h3>
+                                        <p class="program-description">Program pembelajaran seni menulis huruf Arab dengan indah dan penuh makna.</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div> 
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-book-open"></i>
+                                        </div>
+                                        <h3 class="program-title">Khotmil Qur’an</h3>
+                                        <p class="program-description">Program peringatan kelahiran Nabi Muhammad SAW untuk memperdalam kecintaan terhadap Rasul.<br>Jum’at, 26 Juli 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-broom"></i>
+                                        </div>
+                                        <h3 class="program-title">Bersih-Bersih Musholla (BBM) </h3>
+                                        <p class="program-description">Kegiatan rutin membersihkan musholla sebagai wujud kepedulian terhadap kebersihan tempat ibadah.<br>Satu bulan sekali</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div> 
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-comments"></i>
+                                        </div>
+                                        <h3 class="program-title">Diskusi Permasalahan Islam dan Remaja</h3>
+                                        <p class="program-description">Diskusi untuk membahas isu-isu Islam yang relevan dengan kehidupan remaja saat ini.<br>Sabtu, 14 September 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-dove"></i>
+                                        </div>
+                                        <h3 class="program-title">Rohis (Rohani Islamiyah) </h3>
+                                        <p class="program-description">Program rohani yang melibatkan penguatan iman dan takwa melalui kegiatan keagamaan.<br>30 Agustus 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-newspaper"></i>
+                                        </div>
+                                        <h3 class="program-title">Kolaborasi Mading </h3>
+                                        <p class="program-description"> Kolaborasi antar siswa dalam membuat dan mengelola media informasi di mading.<br>Oktober 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-microphone-alt"></i>
+                                        </div>
+                                        <h3 class="program-title">Ketaqwaan Bersholawat </h3>
+                                        <p class="program-description">Acara rutin untuk bersholawat bersama sebagai bentuk kecintaan kepada Nabi Muhammad.<br>Tiga bulan sekali</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div> 
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+                                        <h3 class="program-title">Takziah dan Sumbangan Kematian (Bimbang)</h3>
+                                        <p class="program-description">Kegiatan sosial berupa takziah dan pengumpulan sumbangan untuk keluarga yang berduka.</p>
+                                        <div class="program-status status-planned">Direncanakan</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-hands-helping"></i>
+                                        </div>
+                                        <h3 class="program-title">Makah (MAN 1 Jember Berkah) </h3>
+                                        <p class="program-description">Perjalanan spiritual dan kegiatan sosial dengan tema kebersamaan. <br>30 Maret 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-podcast"></i>
+                                        </div>
+                                        <h3 class="program-title">Podcast Ramadhan </h3>
+                                        <p class="program-description">Acara podcast yang mengangkat tema keislaman selama bulan suci Ramadhan.<br>Bulan Ramadhan</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <h3 class="program-title">Website Kotak Saran</h3>
+                                        <p class="program-description">Website interaktif untuk mengumpulkan saran dan masukan dari anggota.</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-trophy"></i>
+                                        </div>
+                                        <h3 class="program-title">Konten Quiz Islami Berhadiah</h3>
+                                        <p class="program-description">Kegiatan quiz Islami dengan hadiah menarik untuk meningkatkan pengetahuan agama.<br>Rencana Pelaksanaan 22 Oktober 2024</p>
+                                        <div class="program-status status-planned">Direncanakan</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-tree"></i>
+                                        </div>
+                                        <h3 class="program-title">Ziarah Wali dan Tadabur Alam</h3>
+                                        <p class="program-description">Ziarah ke makam wali dan refleksi spiritual di alam sebagai sarana introspeksi diri.<br>Rencana Pelaksanaan 18 Desember 2024</p>
+                                        <div class="program-status status-planned">Direncanakan</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-tree"></i>
+                                        </div>
+                                        <h3 class="program-title">Diklat Ketaqwaan Angkatan 2024/2025</h3>
+                                        <p class="program-description">Diklat bagi anggota baru untuk memperdalam ketaqwaan melalui pelatihan dan pembelajaran.<br>Rencana Pelaksanaan 25 Oktober, 1 dan 2 November 2024</p>
+                                        <div class="program-status status-planned">Direncanakan</div>
+                                    </div>
+                                </div>
+                                <!-- Slide items -->
+                                
+                            <!-- Navigation -->
+                            <div class="swiper-button-next-proker"></div>
+                            <div class="swiper-button-prev-proker"></div>
+                            <!-- Pagination -->
+                            <div class="swiper-pagination-proker"></div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
-        </section>
+
+        </div>
+    </section>
+    
+    <!-- Kegiatan Slider -->
+    <section id="kegiatan" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-teal-800">Peringatan Hari Besar Islam</h2>
+            <div class="kegiatan-slider">
+                <!-- Kegiatan 1 -->
+                <div class="slide-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-kegiatan/dokumentasi-maulid-nabi-dan-hari-santri-2023.jpg" alt="Kegiatan 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">MAULID NABI DAN HARI SANTRI NASIONAL 2023</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                "Maulid Nabi Muhammad SAW dapat menjadi momen meningkatkan kasih sayang, mengutamakan kebenaran, mempererat tali persaudaraan, serta menjunjung tinggi toleransi."
+                                "Santri adalah cahaya bangsa yang terus menyinari jalan kebenaran dan kedamaian."
+                                
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+                <!-- Kegiatan 2 -->
+                <div class="slide-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-kegiatan/dokumentasi-isra-miraj-2024.jpg" alt="Kegiatan 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">ISRA MI'RAJ 2024</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                "Isra Miraj adalah perjalanan bersejarah dalam kehidupan Nabi Muhammad SAW. Semoga kisah Isra Miraj ini menginspirasi kita untuk meneladani akhlak beliau."
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+                <!-- Kegiatan 3 -->
+                <div class="slide-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-kegiatan/dokumentasi-muharram-2024.jpg" alt="Kegiatan 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">MUHARRAM 2024</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                "Tahun baru islam mengingatkan kita untuk hijrah, berpindah dari keburukan menuju kebaikan, dari kejahilan menuju ilmu, dan dari kezaliman menuju keadilan" - Buya Hamka
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+                <!-- Kegiatan 4 -->
+                <div class="slide-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-kegiatan/dokumentasi-maulid-nabi-2024.jpg" alt="Kegiatan 4" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">MAULID NABI 2024</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                "Pada Maulid Nabi ini mari kita renungkan bahwa kata terindah adalah Allah, lagu menakjubkan yakni lantunan azan, buku terbaik merupakan Al-Qur'an, dan beruntunglah kita sebagai umat Muslim."
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
 
-        <!-- Struktur Organisasi Section -->
-        <section id="struktur" class="section-structure">
-            <!-- Teks di sebelah kiri -->
-            <div class="text-left-content">
-                <h2 class="text-3xl font-bold text-left mb-4">Struktur Organisasi</h2>
-                <p class="text-gray-700 text-left mb-6">
-                    Berikut adalah struktur organisasi SIE 1 KETAQWAAN MAN 1 Jember periode 2023/2024.
+    <!-- Ekstrakurikuler Slider -->
+    <section id="ekskul" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-teal-800">Ekstrakurikuler</h2>
+            <div class="ekskul-slider">
+
+                <!-- Tilawah -->
+                <div class="ekskul-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-ekskul/ekskul-tilawah.jpg" alt="Tilawah" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Tilawah</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                Program mempelajari dan mendalami irama Al-Qur'andengan bimbingan ustadz berpengalaman.
+            
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="ekskul-tags mt-auto">
+                            <span class="ekskul-tag">Setiap Sabtu</span>
+                            <span class="ekskul-tag">13.00 - Selesai</span>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+
+                <!-- Hadrah -->
+                <div class="ekskul-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-ekskul/ekskul-hadrah.jpg" alt="Hadrah" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Hadrah</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                Kegiatan seni musik islami yang mencakup:
+                                - Teknik dasar bermain rebana
+                                - Latihan vocal sholawat
+                                - Harmonisasi kelompok
+                                - Persiapan performance
+                                - Latihan rutin mingguan
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="ekskul-tags mt-auto">
+                            <span class="ekskul-tag">Hari Jum'at dan Sabtu</span>
+                            <span class="ekskul-tag">13.00 - Selesai</span>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+
+                <!-- Kaligrafi -->
+                <div class="ekskul-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-ekskul/ekskul-kaligrafi.jpg" alt="Kaligrafi" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Kaligrafi</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                Kegiatan seni lukis islami yang mencakup:
+                                - Teknik dasar kaligrafi arab
+                                - Pengenalan berbagai gaya khat
+                                - Latihan komposisi dan ornamen
+                                - Praktek pembuatan karya
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="ekskul-tags mt-auto">
+                            <span class="ekskul-tag">Setiap Sabtu</span>
+                            <span class="ekskul-tag">13.00 - Selesai</span>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+                <!-- Tilawah -->
+                <div class="ekskul-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-ekskul/ekskul-tilawah.jpg" alt="Tilawah" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Tilawah</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                Program mempelajari dan mendalami irama Al-Qur'andengan bimbingan ustadz berpengalaman.
+            
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="ekskul-tags mt-auto">
+                            <span class="ekskul-tag">Setiap Sabtu</span>
+                            <span class="ekskul-tag">13.00 - Selesai</span>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+
+                <!-- Hadrah -->
+                <div class="ekskul-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-ekskul/ekskul-hadrah.jpg" alt="Hadrah" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Hadrah</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                Kegiatan seni musik islami yang mencakup:
+                                - Teknik dasar bermain rebana
+                                - Latihan vocal sholawat
+                                - Harmonisasi kelompok
+                                - Persiapan performance
+                                - Latihan rutin mingguan
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="ekskul-tags mt-auto">
+                            <span class="ekskul-tag">Hari Jum'at dan Sabtu</span>
+                            <span class="ekskul-tag">13.00 - Selesai</span>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+
+                <!-- Kaligrafi -->
+                <div class="ekskul-card">
+                    <div class="w-full h-64 overflow-hidden">
+                        <img src="/image-ekskul/ekskul-kaligrafi.jpg" alt="Kaligrafi" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Kaligrafi</h3>
+                        <div class="content-wrapper" style="max-height: 150px;">
+                            <p class="text-gray-600 leading-relaxed">
+                                Kegiatan seni lukis islami yang mencakup:
+                                - Teknik dasar kaligrafi arab
+                                - Pengenalan berbagai gaya khat
+                                - Latihan komposisi dan ornamen
+                                - Praktek pembuatan karya
+                            </p>
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="ekskul-tags mt-auto">
+                            <span class="ekskul-tag">Setiap Sabtu</span>
+                            <span class="ekskul-tag">13.00 - Selesai</span>
+                        </div>
+                        <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                            Tampilkan selengkapnya
+                        </button> -->
+                    </div>
+                </div>
+
+
+
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Informasi -->
+    <section id="informasi" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-center mb-8">INFORMASI</h2>
+            <p class="text-gray-600 mb-8">Pengumuman tentang siapa saja yang lolos menjadi anggota sie 1 ketaqwaan man 1 jember</p>
+            <a href="https://lookerstudio.google.com/reporting/dcf3ad5b-7817-4c57-b6ed-3bf6e96e6d96" class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
+<!--             <a href="/page-html/page-informasi.html" class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl"> -->
+                Pengumuman
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Kotak Saran -->
+    <section id="saran" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-center mb-8">Kotak Saran</h2>
+            <p class="text-gray-600 mb-8">Berikan semua kritik, saran, dan apresiasi anda kepada kami😊</p>
+            <p class="text-gray-600 mb-8">Tenang semua masukan yang anda berikan akan bersifat anonim😶‍🌫️ jadi jangan ragu untuk bersuara yaaa🤩</p>
+            <a href="https://sie1ketaqwaanman1.vercel.app/" class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                Berikan Masukan
+            </a>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container mx-auto px-6 grid grid-cols-4 gap-6 text-sm">
+            <!-- Tentang Kami Section -->
+            <div>
+                <h3 class="font-bold mb-4">TENTANG KAMI</h3>
+                <p>
+                    Sie 1 Ketaqwaan adalah organisasi yang berada di lingkungna MAN 1 JEMBER.
                 </p>
             </div>
-        
-            <!-- Struktur organisasi di sebelah kanan -->
-            <div class="structure-content">
-                <h3 class="text-center font-bold mb-4">Susunan Pengurus</h3>
-                <h3 class="text-center font-bold mb-4">2023 / 2024</h3>
-                <ul class="structure-list">
-                    <li>Koordinator Bidang: Bima Sakti Dimasta</li>
-                    <li>Ketua: Muhammad Farhan Maulana</li>
-                    <li>Wakil Ketua: Muhammad Ilfan Enggal</li>
-                    <li>Sekretaris 1: Meyla Fahza</li>
-                    <li>Sekretaris 2: Queen Fahriza Putri</li>
-                    <li>Bendahara 1: Shuhufa Nur Indah</li>
-                    <li>Bendahara 2: Nadia Regita</li>
-                    <li>Koordinator sie Humas: Esti Mustika</li>
-                    <li>Koordinator sie Ubudiyah: Abdullah Habibi</li>
-                    <li>Koordinator sie Sarpas: Junda Balqies</li>
-                    <li>Koordinator sie Media: Muhammad Ali Shidqi</li>
-                    <li>Koordinator ekskul Hadrah: Ria Aulia Ramadhan</li>
-                    <li>Koordinator ekskul Kaligrafi: Nadia Mumtazah Alfitroh</li>
-                    <li>Koordinator ekskul Tilawah: Muhammad Irfan Afif Baidur</li>
+            <!-- Menu Profil Section -->
+            <div>
+                <h3 class="font-bold mb-4">MENU PROFIL</h3>
+                <ul class="space-y-2">
+                    <li><a href="#beranda" class="hover:underline">› Beranda</a></li>
+                    <li><a href="#struktur" class="hover:underline">› Struktur Organisasi</a></li>
+                    <li><a href="#proker" class="hover:underline">› Program Kerja</a></li>
+                    <li><a href="#kegiatan" class="hover:underline">› Kegiatan</a></li>
+                    <li><a href="#ekskul" class="hover:underline">› Ekstrakurikuler</a></li>
+                    <li><a href="#informasi" class="hover:underline">› Informasi</a></li>
+                    <li><a href="#saran" class="hover:underline">› Kotak Saran</a></li>
                 </ul>
             </div>
-        </section>
-
-
-        <!-- Kegiatan Slider -->
-        <section id="kegiatan" class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-12 text-teal-800">Kegiatan Kami</h2>
-                <div class="kegiatan-slider">
-                    <!-- Kegiatan 1 -->
-                    <div class="slide-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-kegiatan/dokumentasi-maulid-nabi-dan-hari-santri-2023.jpg" alt="Kegiatan 1" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">MAULID NABI DAN HARI SANTRI NASIONAL 2023</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    "Maulid Nabi Muhammad SAW dapat menjadi momen meningkatkan kasih sayang, mengutamakan kebenaran, mempererat tali persaudaraan, serta menjunjung tinggi toleransi."
-                                    "Santri adalah cahaya bangsa yang terus menyinari jalan kebenaran dan kedamaian."
-                                    
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
-                    <!-- Kegiatan 2 -->
-                    <div class="slide-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-kegiatan/dokumentasi-isra-miraj-2024.jpg" alt="Kegiatan 2" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">ISRA MI'RAJ 2024</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    "Isra Miraj adalah perjalanan bersejarah dalam kehidupan Nabi Muhammad SAW. Semoga kisah Isra Miraj ini menginspirasi kita untuk meneladani akhlak beliau."
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
-                    <!-- Kegiatan 3 -->
-                    <div class="slide-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-kegiatan/dokumentasi-muharram-2024.jpg" alt="Kegiatan 3" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">MUHARRAM 2024</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    "Tahun baru islam mengingatkan kita untuk hijrah, berpindah dari keburukan menuju kebaikan, dari kejahilan menuju ilmu, dan dari kezaliman menuju keadilan" - Buya Hamka
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
-                    <!-- Kegiatan 4 -->
-                    <div class="slide-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-kegiatan/dokumentasi-maulid-nabi-2024.jpg" alt="Kegiatan 4" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">MAULID NABI 2024</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    "Pada Maulid Nabi ini mari kita renungkan bahwa kata terindah adalah Allah, lagu menakjubkan yakni lantunan azan, buku terbaik merupakan Al-Qur'an, dan beruntunglah kita sebagai umat Muslim."
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
+            <!-- PSPDB Section -->
+            <div>
+                <h3 class="font-bold mb-4">SOSIAL MEDIA</h3>
+                <ul class="space-y-2">
+                    <li><a href="/page-html/page-comingsoon.html" class="hover:underline">› Instagram</a></li>
+                    <li><a href="/page-html/page-comingsoon.html" class="hover:underline">› Facebook</a></li>
+                    <li><a href="/page-html/page-comingsoon.html" class="hover:underline">› Tiktok</a></li>
                     
-                </div>
+                </ul>
             </div>
-        </section>
-
-
-        <!-- Ekstrakurikuler Slider -->
-        <section id="ekskul" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-12 text-teal-800">Ekstrakurikuler</h2>
-                <div class="ekskul-slider">
-
-                    <!-- Tilawah -->
-                    <div class="ekskul-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-ekskul/ekskul-tilawah.jpg" alt="Tilawah" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">Tilawah</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    Program mempelajari dan mendalami irama Al-Qur'andengan bimbingan ustadz berpengalaman.
-                
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <div class="ekskul-tags mt-auto">
-                                <span class="ekskul-tag">Setiap Sabtu</span>
-                                <span class="ekskul-tag">13.00 - Selesai</span>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
-
-                    <!-- Hadrah -->
-                    <div class="ekskul-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-ekskul/ekskul-hadrah.jpg" alt="Hadrah" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">Hadrah</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    Kegiatan seni musik islami yang mencakup:
-                                    - Teknik dasar bermain rebana
-                                    - Latihan vocal sholawat
-                                    - Harmonisasi kelompok
-                                    - Persiapan performance
-                                    - Latihan rutin mingguan
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <div class="ekskul-tags mt-auto">
-                                <span class="ekskul-tag">Hari Jum'at dan Sabtu</span>
-                                <span class="ekskul-tag">13.00 - Selesai</span>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
-
-                    <!-- Kaligrafi -->
-                    <div class="ekskul-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-ekskul/ekskul-kaligrafi.jpg" alt="Kaligrafi" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">Kaligrafi</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    Kegiatan seni lukis islami yang mencakup:
-                                    - Teknik dasar kaligrafi arab
-                                    - Pengenalan berbagai gaya khat
-                                    - Latihan komposisi dan ornamen
-                                    - Praktek pembuatan karya
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <div class="ekskul-tags mt-auto">
-                                <span class="ekskul-tag">Setiap Sabtu</span>
-                                <span class="ekskul-tag">13.00 - Selesai</span>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
-                    <!-- Tilawah -->
-                    <div class="ekskul-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-ekskul/ekskul-tilawah.jpg" alt="Tilawah" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">Tilawah</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    Program mempelajari dan mendalami irama Al-Qur'andengan bimbingan ustadz berpengalaman.
-                
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <div class="ekskul-tags mt-auto">
-                                <span class="ekskul-tag">Setiap Sabtu</span>
-                                <span class="ekskul-tag">13.00 - Selesai</span>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
-
-                    <!-- Hadrah -->
-                    <div class="ekskul-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-ekskul/ekskul-hadrah.jpg" alt="Hadrah" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">Hadrah</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    Kegiatan seni musik islami yang mencakup:
-                                    - Teknik dasar bermain rebana
-                                    - Latihan vocal sholawat
-                                    - Harmonisasi kelompok
-                                    - Persiapan performance
-                                    - Latihan rutin mingguan
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <div class="ekskul-tags mt-auto">
-                                <span class="ekskul-tag">Hari Jum'at dan Sabtu</span>
-                                <span class="ekskul-tag">13.00 - Selesai</span>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
-
-                    <!-- Kaligrafi -->
-                    <div class="ekskul-card">
-                        <div class="w-full h-64 overflow-hidden">
-                            <img src="/image-ekskul/ekskul-kaligrafi.jpg" alt="Kaligrafi" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-4 text-teal-700">Kaligrafi</h3>
-                            <div class="content-wrapper" style="max-height: 150px;">
-                                <p class="text-gray-600 leading-relaxed">
-                                    Kegiatan seni lukis islami yang mencakup:
-                                    - Teknik dasar kaligrafi arab
-                                    - Pengenalan berbagai gaya khat
-                                    - Latihan komposisi dan ornamen
-                                    - Praktek pembuatan karya
-                                </p>
-                                <div class="fade-overlay"></div>
-                            </div>
-                            <div class="ekskul-tags mt-auto">
-                                <span class="ekskul-tag">Setiap Sabtu</span>
-                                <span class="ekskul-tag">13.00 - Selesai</span>
-                            </div>
-                            <!-- <button class="read-more-btn mt-4 text-teal-600 hover:text-teal-800 font-semibold">
-                                Tampilkan selengkapnya
-                            </button> -->
-                        </div>
-                    </div>
-
-
-
-                    
-                </div>
+            <!-- Alamat Section -->
+            <div>
+                <h3 class="font-bold mb-4">Alamat:</h3>
+                <p>Jl. Imam Bonjol No.50<br>
+                    Kaliwates Kidul, Kaliwates, <br>
+                    Kec. Kaliwates,<br>
+                    Kabupaten Jember, Jawa Timur 68131.</p>
+                <p class="mt-4">📞 0857-3156-5201<br> 
+                WhatsApp: 0857-3156-5201 <br>
+                Jika ada eror hubungi Admin yaaa🤩</p>
             </div>
-        </section>
-        
-        <!-- Informasi -->
-        <section id="informasi" class="py-16 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold text-center mb-8">INFORMASI</h2>
-                <p class="text-gray-600 mb-8">Pengumuman tentang siapa saja yang lolos menjadi anggota sie 1 ketaqwaan man 1 jember</p>
-                <a href="https://lookerstudio.google.com/reporting/dcf3ad5b-7817-4c57-b6ed-3bf6e96e6d96" class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
-    <!--             <a href="/page-html/page-informasi.html" class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl"> -->
-                    Pengumuman
-                </a>
-            </div>
-        </section>
-
-
-        <!-- Kotak Saran -->
-        <section id="saran" class="py-16 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold text-center mb-8">Kotak Saran</h2>
-                <p class="text-gray-600 mb-8">Berikan semua kritik, saran, dan apresiasi anda kepada kami😊</p>
-                <p class="text-gray-600 mb-8">Tenang semua masukan yang anda berikan akan bersifat anonim😶‍🌫️ jadi jangan ragu untuk bersuara yaaa🤩</p>
-                <a href="https://sie1ketaqwaanman1.vercel.app/" class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
-                    Berikan Masukan
-                </a>
-            </div>
-        </section>
-
-
-        <footer>
-            <div class="container mx-auto px-6 grid grid-cols-4 gap-6 text-sm">
-                <!-- Tentang Kami Section -->
-                <div>
-                    <h3 class="font-bold mb-4">TENTANG KAMI</h3>
-                    <p>
-                        Sie 1 Ketaqwaan adalah organisasi yang berada di lingkungna MAN 1 JEMBER.
-                    </p>
-                </div>
-                <!-- Menu Profil Section -->
-                <div>
-                    <h3 class="font-bold mb-4">MENU PROFIL</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#beranda" class="hover:underline">› Beranda</a></li>
-                        <li><a href="#struktur" class="hover:underline">› Struktur Organisasi</a></li>
-                        <li><a href="#kegiatan" class="hover:underline">› Kegiatan</a></li>
-                        <li><a href="#ekskul" class="hover:underline">› Ekstrakurikuler</a></li>
-                        <li><a href="#informasi" class="hover:underline">› Informasi</a></li>
-                        <li><a href="#saran" class="hover:underline">› Kotak Saran</a></li>
-                    </ul>
-                </div>
-                <!-- PSPDB Section -->
-                <div>
-                    <h3 class="font-bold mb-4">SOSIAL MEDIA</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/page-html/page-comingsoon.html" class="hover:underline">› Instagram</a></li>
-                        <li><a href="/page-html/page-comingsoon.html" class="hover:underline">› Facebook</a></li>
-                        <li><a href="/page-html/page-comingsoon.html" class="hover:underline">› Tiktok</a></li>
-                        
-                    </ul>
-                </div>
-                <!-- Alamat Section -->
-                <div>
-                    <h3 class="font-bold mb-4">Alamat:</h3>
-                    <p>Jl. Imam Bonjol No.50<br>
-                        Kaliwates Kidul, Kaliwates, <br>
-                        Kec. Kaliwates,<br>
-                        Kabupaten Jember, Jawa Timur 68131.</p>
-                    <p class="mt-4">📞 0857-3156-5201<br> 
-                    WhatsApp: 0857-3156-5201 <br>
-                    Jika ada eror hubungi Admin yaaa🤩</p>
-                </div>
-            </div>
-        </footer>
-    </body>
-    </html>
+        </div>
+    </footer>
+</body>
+</html>
