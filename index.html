@@ -21,26 +21,44 @@
 <body class="bg-gray-50">
 
     <!-- Navbar -->
-    <nav id="navbar">
-        <div class="container mx-auto px-6 py-3">
+    <nav id="navbar" class="show">
+        <div class="container mx-auto">
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
+                <div>
                     <span class="text-xl font-bold">SIE 1 KETAQWAAN MAN 1 JEMBER</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#beranda" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Beranda</a>
-                    <a href="#struktur" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Struktur Organisasi</a>
-                    <a href="#proker" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Program Kerja</a>
-                    <a href="#kegiatan" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">PHBI</a>
-                    <a href="#ekskul" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Ekstrakurikuler</a>
-                    <a href="#informasi" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Informasi</a>
-                    <a href="#saran" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Kotak Saran</a>
+                <div class="menu-toggle md:hidden" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="hidden md:flex nav-links">
+                    <a href="#beranda">Beranda</a>
+                    <a href="#struktur">Struktur Organisasi</a>
+                    <a href="#proker">Program Kerja</a>
+                    <a href="#kegiatan">PHBI</a>
+                    <a href="#ekskul">Ekstrakurikuler</a>
+                    <a href="#informasi">Informasi</a>
+                    <a href="#saran">Kotak Saran</a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <div class="mobile-menu">
+        <button class="close-btn" onclick="closeMobileMenu()">×</button>
+        <div class="nav-links">
+            <a href="#beranda">Beranda</a>
+            <a href="#struktur">Struktur Organisasi</a>
+            <a href="#proker">Program Kerja</a>
+            <a href="#kegiatan">PHBI</a>
+            <a href="#ekskul">Ekstrakurikuler</a>
+            <a href="#informasi">Informasi</a>
+            <a href="#saran">Kotak Saran</a>
+        </div>
+    </div>
 
+    <div class="overlay" onclick="closeMobileMenu()"></div>
     <!-- Hero Section -->
     <section class="hero-slider" id="beranda">
         <div class="flex flex-col md:flex-row min-h-auto">

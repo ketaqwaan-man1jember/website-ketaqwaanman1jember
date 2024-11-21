@@ -1,4 +1,9 @@
-html{
+:root {
+    --base-font-size: 16px;
+    --scale-factor: 1;
+}
+
+html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     font-size: var(--base-font-size);
@@ -10,17 +15,13 @@ body {
     font-size: var(--base-font-size);
     line-height: 1.5;
 }
+
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
-.root {
-    --base-font-size: 16px;
-    --scale-factor: 1;
-}
 
-/* Optional: Add font smoothing for better rendering */
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -34,57 +35,106 @@ nav {
     width: 100%;
     background-color: #006d6d;
     color: white;
-    padding: 0.5rem; /* Reduced padding */
     z-index: 1000;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    opacity: 0;
-    transform: translateY(-20px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
-    height: 3rem; /* Fixed height */
-    display: flex;
-    align-items: center;
-    }
-nav {
-    background-color: #006d6d; /* Warna background teal */
-    color: white; /* Warna teks */
     padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     opacity: 0; /* Awalnya disembunyikan */
-    transform: translateY(-20px); /* Animasi muncul dari atas */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi animasi */
-}
-/* Animasi saat halaman dimuat */
-nav.show {
-    opacity: 1; /* Tampilkan */
-    transform: translateY(0); /* Kembali ke posisi semula */
-}
-
-/* Navigation Links Container */
-nav .nav-links {
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
     display: flex;
-    align-items: center;
-    gap: 0.5rem; /* Consistent spacing between links */
+    justify-content: space-between; /* Menyebarkan elemen ke kiri dan kanan */
+    align-items: center; /* Vertikal center */
 }
 
-/* Hover efek pada link navbar */
+/* Tampilkan navbar saat halaman dimuat */
+nav.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0.3rem;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #008080;
+    z-index: 1100;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: right 0.3s ease;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.mobile-menu .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.hidden.md\:flex {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hidden.md\:flex {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
 nav a {
     position: relative;
-    display: inline-flex;
-    align-items: center;
     color: white;
     font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 0.3rem 0.6rem; /* Smaller padding */
-    margin: 0 0.2rem;
-    font-size: clamp(0.75rem, 1.2vw, 0.9rem); /* Smaller font size */
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    height: 2rem; /* Fixed height for links */
-    line-height: 1;
+    font-size: 14px;
+    transition: color 0.3s ease;
 }
 
-/* Active Link Style */
-nav a.active {
+nav a:hover {
     color: #b2f5ea;
-    font-weight: 600;
 }
 
 nav a:after {
@@ -93,21 +143,32 @@ nav a:after {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 1px; /* Thinner underline */
-    background-color: #fff;
+    height: 2px;
+    background-color: white;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
 }
-nav a:hover {
-    color: #b2f5ea; /* Warna teks saat di-hover */
-}
+
 nav a:hover:after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    display: none;
+}
 
+.overlay.active {
+    display: block;
+}
 
 /* Hero Section */
 .hero-section {
@@ -445,6 +506,10 @@ nav a:hover:after {
     .swiper-button-prev-proker {
         display: none;
     }
+    .swiper-pagination-proker,
+    .swiper-pagination-bullet {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -468,6 +533,10 @@ nav a:hover:after {
 
     .swiper-button-next-proker,
     .swiper-button-prev-proker {
+        display: none;
+    }
+    .swiper-pagination-proker,
+    .swiper-pagination-bullet {
         display: none;
     }
 }
@@ -556,6 +625,9 @@ nav a:hover:after {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     overflow: hidden; /* Prevent default scrolling */
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
 
 }
 
@@ -573,6 +645,7 @@ nav a:hover:after {
 .kegiatan-slider.tns-slider,
 .ekskul-slider.tns-slider {
     visibility: visible; /* Show slider after initialization */
+    margin-right: 10px;
 }
 
 /* Card styles */
@@ -1040,7 +1113,6 @@ nav {
     .tns-controls {
         display: none;
     }
-
 }
 
 @media (max-width: 767px) {

@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
-    <title>Ketaqwaan MAN 1 Jember</title>
+    <meta name="google-site-verification" content="D5WVPp_3rbVlh1dWzrIdMFur6At0S3GLeIJoLg_sv7o" />
+    <title>SIE 1 Ketaqwaan MAN 1 Jember</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
@@ -18,26 +21,44 @@
 <body class="bg-gray-50">
 
     <!-- Navbar -->
-    <nav id="navbar">
-        <div class="container mx-auto px-6 py-3">
+    <nav id="navbar" class="show">
+        <div class="container mx-auto">
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
+                <div>
                     <span class="text-xl font-bold">SIE 1 KETAQWAAN MAN 1 JEMBER</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#beranda" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Beranda</a>
-                    <a href="#struktur" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Struktur Organisasi</a>
-                    <a href="#proker" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Program Kerja</a>
-                    <a href="#kegiatan" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Kegiatan</a>
-                    <a href="#ekskul" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Ekstrakurikuler</a>
-                    <a href="#informasi" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Informasi</a>
-                    <a href="#saran" class="transition duration-300 ease-in-out transform hover:scale-105 hover:text-green-200">Kotak Saran</a>
+                <div class="menu-toggle md:hidden" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="hidden md:flex nav-links">
+                    <a href="#beranda">Beranda</a>
+                    <a href="#struktur">Struktur Organisasi</a>
+                    <a href="#proker">Program Kerja</a>
+                    <a href="#kegiatan">PHBI</a>
+                    <a href="#ekskul">Ekstrakurikuler</a>
+                    <a href="#informasi">Informasi</a>
+                    <a href="#saran">Kotak Saran</a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <div class="mobile-menu">
+        <button class="close-btn" onclick="closeMobileMenu()">×</button>
+        <div class="nav-links">
+            <a href="#beranda">Beranda</a>
+            <a href="#struktur">Struktur Organisasi</a>
+            <a href="#proker">Program Kerja</a>
+            <a href="#kegiatan">PHBI</a>
+            <a href="#ekskul">Ekstrakurikuler</a>
+            <a href="#informasi">Informasi</a>
+            <a href="#saran">Kotak Saran</a>
+        </div>
+    </div>
 
+    <div class="overlay" onclick="closeMobileMenu()"></div>
     <!-- Hero Section -->
     <section class="hero-slider" id="beranda">
         <div class="flex flex-col md:flex-row min-h-auto">
@@ -113,52 +134,208 @@
                         <div class="swiper-proker">
                             <div class="swiper-wrapper">
                                 <!-- Slide items -->
-                                 
                                 <div class="swiper-slide swiper-slide-proker">
                                     <div class="program-card">
                                         <div class="program-icon">
-                                            <i class="fas fa-graduation-cap"></i>
+                                            <i class="fas fa-mosque"></i>
                                         </div>
-                                        <h3 class="program-title">Pelatihan dan Pengembangan</h3>
-                                        <p class="program-description">Program peningkatan kompetensi anggota melalui workshop, seminar, dan pelatihan berkala.</p>
-                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                        <h3 class="program-title">Maulid Nabi dan Hari Santri Nasional 2023 </h3>
+                                        <p class="program-description">Perayaan untuk memperingati kelahiran Nabi Muhammad dan Hari Santri Nasional dengan berbagai kegiatan keagamaan.<br>Sabtu, 21 Oktober 2023</p>
+                                        <div class="program-status status-completed">Selesai</div>
                                     </div>
-                                </div>
-
+                                </div>                             
                                 <div class="swiper-slide swiper-slide-proker">
                                     <div class="program-card">
                                         <div class="program-icon">
-                                            <i class="fas fa-users"></i>
+                                            <i class="fas fa-star-and-crescent"></i>
                                         </div>
-                                        <h3 class="program-title">Forum Diskusi Bulanan</h3>
-                                        <p class="program-description">Wadah diskusi dan berbagi pengetahuan antar anggota organisasi setiap bulan.</p>
+                                        <h3 class="program-title">Isra Mi’raj</h3>
+                                        <p class="program-description">Program peringatan perjalanan spiritual Nabi Muhammad SAW yang melibatkan perjalanan malam dari Makkah ke Yerusalem dan naik ke langit.<br>Kamis, 22 Februari 2024</p>
                                         <div class="program-status status-completed">Selesai</div>
                                     </div>
                                 </div>
-
                                 <div class="swiper-slide swiper-slide-proker">
                                     <div class="program-card">
                                         <div class="program-icon">
-                                            <i class="fas fa-handshake"></i>
+                                            <i class="fas fa-star"></i>
                                         </div>
-                                        <h3 class="program-title">Kerjasama Strategis</h3>
-                                        <p class="program-description">Menjalin kemitraan dengan berbagai institusi untuk memperluas dampak organisasi.</p>
+                                        <h3 class="program-title">Muharram</h3>
+                                        <p class="program-description">Program acara untuk memperingati Tahun Baru Hijriyah dengan kegiatan yang menggugah semangat persatuan dan refleksi spiritual.<br>Jumat, 26 Juli 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-mosque"></i>
+                                        </div>
+                                        <h3 class="program-title">Maulid Nabi</h3>
+                                        <p class="program-description">Program peringatan kelahiran Nabi Muhammad SAW untuk memperdalam kecintaan terhadap Rasul.<br>Rabu, 25 September 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-music"></i>
+                                        </div>
+                                        <h3 class="program-title">Ekstrakurikuler Hadrah </h3>
+                                        <p class="program-description">Program latihan dan pertunjukan seni hadrah yang menumbuhkan semangat keislaman di kalangan siswa.</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <h3 class="program-title">Ekstrakurikuler Tilawah </h3>
+                                        <p class="program-description">Program latihan membaca Al-Qur'an dengan tajwid yang baik dan benar.</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div>      
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </div>
+                                        <h3 class="program-title">Ekstrakurikuler Kaligrafi </h3>
+                                        <p class="program-description">Program pembelajaran seni menulis huruf Arab dengan indah dan penuh makna.</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div> 
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-book-open"></i>
+                                        </div>
+                                        <h3 class="program-title">Khotmil Qur’an</h3>
+                                        <p class="program-description">Program peringatan kelahiran Nabi Muhammad SAW untuk memperdalam kecintaan terhadap Rasul.<br>Jum’at, 26 Juli 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-broom"></i>
+                                        </div>
+                                        <h3 class="program-title">Bersih-Bersih Musholla (BBM) </h3>
+                                        <p class="program-description">Kegiatan rutin membersihkan musholla sebagai wujud kepedulian terhadap kebersihan tempat ibadah.<br>Satu bulan sekali</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div> 
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-comments"></i>
+                                        </div>
+                                        <h3 class="program-title">Diskusi Permasalahan Islam dan Remaja</h3>
+                                        <p class="program-description">Diskusi untuk membahas isu-isu Islam yang relevan dengan kehidupan remaja saat ini.<br>Sabtu, 14 September 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-dove"></i>
+                                        </div>
+                                        <h3 class="program-title">Rohis (Rohani Islamiyah) </h3>
+                                        <p class="program-description">Program rohani yang melibatkan penguatan iman dan takwa melalui kegiatan keagamaan.<br>30 Agustus 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-newspaper"></i>
+                                        </div>
+                                        <h3 class="program-title">Kolaborasi Mading </h3>
+                                        <p class="program-description"> Kolaborasi antar siswa dalam membuat dan mengelola media informasi di mading.<br>Oktober 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-microphone-alt"></i>
+                                        </div>
+                                        <h3 class="program-title">Ketaqwaan Bersholawat </h3>
+                                        <p class="program-description">Acara rutin untuk bersholawat bersama sebagai bentuk kecintaan kepada Nabi Muhammad.<br>Tiga bulan sekali</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div> 
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+                                        <h3 class="program-title">Takziah dan Sumbangan Kematian (Bimbang)</h3>
+                                        <p class="program-description">Kegiatan sosial berupa takziah dan pengumpulan sumbangan untuk keluarga yang berduka.</p>
                                         <div class="program-status status-planned">Direncanakan</div>
                                     </div>
                                 </div>
-
                                 <div class="swiper-slide swiper-slide-proker">
-                            <div class="program-card">
-                                <div class="program-icon">
-                                    <i class="fas fa-chart-line"></i>
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-hands-helping"></i>
+                                        </div>
+                                        <h3 class="program-title">Makah (MAN 1 Jember Berkah) </h3>
+                                        <p class="program-description">Perjalanan spiritual dan kegiatan sosial dengan tema kebersamaan. <br>30 Maret 2024</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
                                 </div>
-                                <h3 class="program-title">Evaluasi Kinerja</h3>
-                                <p class="program-description">Pengukuran dan evaluasi berkala terhadap pencapaian program organisasi.</p>
-                                <div class="program-status status-ongoing">Sedang Berlangsung</div>
-                            </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-podcast"></i>
+                                        </div>
+                                        <h3 class="program-title">Podcast Ramadhan </h3>
+                                        <p class="program-description">Acara podcast yang mengangkat tema keislaman selama bulan suci Ramadhan.<br>Bulan Ramadhan</p>
+                                        <div class="program-status status-completed">Selesai</div>
+                                    </div>
                                 </div>
-                                <!-- More slides... -->
-                            </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <h3 class="program-title">Website Kotak Saran</h3>
+                                        <p class="program-description">Website interaktif untuk mengumpulkan saran dan masukan dari anggota.</p>
+                                        <div class="program-status status-ongoing">Sedang Berlangsung</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-trophy"></i>
+                                        </div>
+                                        <h3 class="program-title">Konten Quiz Islami Berhadiah</h3>
+                                        <p class="program-description">Kegiatan quiz Islami dengan hadiah menarik untuk meningkatkan pengetahuan agama.<br>Rencana Pelaksanaan 22 Oktober 2024</p>
+                                        <div class="program-status status-planned">Direncanakan</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-tree"></i>
+                                        </div>
+                                        <h3 class="program-title">Ziarah Wali dan Tadabur Alam</h3>
+                                        <p class="program-description">Ziarah ke makam wali dan refleksi spiritual di alam sebagai sarana introspeksi diri.<br>Rencana Pelaksanaan 18 Desember 2024</p>
+                                        <div class="program-status status-planned">Direncanakan</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-proker">
+                                    <div class="program-card">
+                                        <div class="program-icon">
+                                            <i class="fas fa-tree"></i>
+                                        </div>
+                                        <h3 class="program-title">Diklat Ketaqwaan Angkatan 2024/2025</h3>
+                                        <p class="program-description">Diklat bagi anggota baru untuk memperdalam ketaqwaan melalui pelatihan dan pembelajaran.<br>Rencana Pelaksanaan 25 Oktober, 1 dan 2 November 2024</p>
+                                        <div class="program-status status-planned">Direncanakan</div>
+                                    </div>
+                                </div>
+                                <!-- Slide items -->
+                                
                             <!-- Navigation -->
                             <div class="swiper-button-next-proker"></div>
                             <div class="swiper-button-prev-proker"></div>
@@ -175,7 +352,7 @@
     <!-- Kegiatan Slider -->
     <section id="kegiatan" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 text-teal-800">Kegiatan Kami</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-teal-800">Peringatan Hari Besar Islam</h2>
             <div class="kegiatan-slider">
                 <!-- Kegiatan 1 -->
                 <div class="slide-card">

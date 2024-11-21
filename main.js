@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.getElementById('navbar');
     if (navbar) navbar.classList.add('show');
     
-    // Optimized slider configuration for mobile and no gutter
+    // Enhanced slider configuration for left alignment
     const sliderConfig = {
         items: 1,
         slideBy: 1,
@@ -12,63 +12,108 @@ document.addEventListener('DOMContentLoaded', function() {
         nav: true,
         loop: true,
         speed: 400,
-        gutter: 0,
         touch: true,
         mouseDrag: true,
         preventScrollOnTouch: 'auto',
+        fixedWidth: true, // Menambahkan fixedWidth untuk kontrol yang lebih baik
+        gutter: 0, // Tambahkan sedikit jarak antar item
         responsive: {
+            0: {
+                items: 1,
+                fixedWidth: 280 // Lebar fixed untuk mobile
+            },
             640: {
                 items: 2,
-                gutter: 0
+                fixedWidth: 320 // Lebar fixed untuk tablet
             },
             1024: {
                 items: 3,
-                gutter: 0
+                fixedWidth: 500 // Lebar fixed untuk desktop
             }
         },
-        controlsText: ['❮', '❯']
+        controlsText: ['❮', '❯'],
+        // Tambahkan alignment left
+        alignToSlide: true,
+        startIndex: 0
     };
 
-    // Initialize sliders with touch support
+    // Improved slider initialization with left alignment
     const initializeSlider = (selector) => {
         const slider = tns({
             container: selector,
             ...sliderConfig,
-            onInit: function() {
+            onInit: function(info) {
                 const sliderElement = document.querySelector(selector);
-                let startX, isDragging = false;
+                let startX, startY, isDragging = false, isTouchMoving = false;
+                let threshold = 50; // Swipe threshold in pixels
+                let deltaX = 0, deltaY = 0;
 
-                // Touch events for mobile
-                sliderElement.addEventListener('touchstart', (e) => {
+                // Enhanced touch event handlers
+                const handleTouchStart = (e) => {
                     startX = e.touches[0].pageX;
+                    startY = e.touches[0].pageY;
                     isDragging = true;
-                }, { passive: true });
+                    isTouchMoving = false;
+                    deltaX = 0;
+                    deltaY = 0;
+                };
 
-                sliderElement.addEventListener('touchmove', (e) => {
+                const handleTouchMove = (e) => {
                     if (!isDragging) return;
-                    const currentX = e.touches[0].pageX;
-                    const diff = startX - currentX;
-                    
-                    if (Math.abs(diff) > 50) {
-                        if (diff > 0) this.goTo('next');
-                        else this.goTo('prev');
-                        isDragging = false;
-                    }
-                }, { passive: true });
 
-                sliderElement.addEventListener('touchend', () => {
+                    const currentX = e.touches[0].pageX;
+                    const currentY = e.touches[0].pageY;
+
+                    deltaX = currentX - startX;
+                    deltaY = currentY - startY;
+
+                    // Determine if this is a horizontal swipe
+                    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+                        isTouchMoving = true;
+                        e.preventDefault(); // Prevent vertical scrolling
+                    }
+                };
+
+                const handleTouchEnd = (e) => {
+                    if (!isDragging) return;
+
                     isDragging = false;
-                }, { passive: true });
+
+                    // Check for significant horizontal movement
+                    if (isTouchMoving) {
+                        if (deltaX < -threshold) {
+                            // Swipe left
+                            this.goTo('next');
+                        } else if (deltaX > threshold) {
+                            // Swipe right
+                            this.goTo('prev');
+                        }
+                    }
+
+                    isTouchMoving = false;
+                };
+
+                // Add touch event listeners
+                sliderElement.addEventListener('touchstart', handleTouchStart, { passive: false });
+                sliderElement.addEventListener('touchmove', handleTouchMove, { passive: false });
+                sliderElement.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+                // Prevent default drag behavior
+                sliderElement.addEventListener('dragstart', (e) => e.preventDefault());
             }
         });
         
         return slider;
     };
 
-    // Initialize both sliders
+    // Initialize sliders with left alignment
     const kegiatanSlider = initializeSlider('.kegiatan-slider');
     const ekskulSlider = initializeSlider('.ekskul-slider');
 
+    // Rest of the existing code remains the same
+
+    // Rest of the existing code remains the same (smooth scroll, content height, etc.)
+    
     // Smooth scroll functionality
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -124,7 +169,10 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(updateContentHeights, 100);
     });
-    
+        
+});
+
+document.addEventListener("DOMContentLoaded", function() {
 
     // Initialize Swiper
     const swiper = new Swiper('.swiper-proker', {
@@ -299,11 +347,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
-});
 
+})
 // Initialize animations
 document.addEventListener('DOMContentLoaded', function() {
+    
+    
     initializeStatusAnimations();
 
     // Observer for dynamic content
@@ -343,3 +392,18 @@ document.addEventListener('DOMContentLoaded', function() {
     handleReducedMotion(mediaQuery);
 });
 
+function toggleMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    
+    mobileMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+}
