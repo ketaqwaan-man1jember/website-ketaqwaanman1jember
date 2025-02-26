@@ -1,4 +1,11 @@
 {
+    "Instrukture": {
+        "All Status": [
+            "Selesai = ketika program telah terjalan kan / selesai ",
+            "Sedang Berlangsung = ketika program masih berjalan seperi ekstrakulikuler",
+            "Direncanakan = Ketika progam belum terlaksana"
+        ]
+    },
     "struktur": {
         "members": [
             "Koordinator Bidang: Laqia",
@@ -14,7 +21,7 @@
             "Koordinator sie Media: -",
             "Koordinator ekskul Hadrah: -",
             "Koordinator ekskul Kaligrafi: -",
-            "Koordinator ekskul Tilawah: -"
+            "Koordinator ekskul Tilawah: Hilmi"
         ]
     },
     "programKerja": [
@@ -149,14 +156,14 @@
             "title": "Ziarah Wali dan Tadabur Alam",
             "description": "Ziarah ke makam wali dan refleksi spiritual di alam sebagai sarana introspeksi diri.",
             "date": "Rencana Pelaksanaan 18 Desember 2024",
-            "status": "Direncanakan"
+            "status": "Selesai"
         },
         {
             "icon": "fas fa-tree",
             "title": "Diklat Ketaqwaan Angkatan 2024/2025",
             "description": "Diklat bagi anggota baru untuk memperdalam ketaqwaan melalui pelatihan dan pembelajaran.",
             "date": "Rencana Pelaksanaan 25 Oktober, 1 dan 2 November 2024",
-            "status": "Direncanakan"
+            "status": "Selesai"
         }     
     ],
     "kegiatan": [
